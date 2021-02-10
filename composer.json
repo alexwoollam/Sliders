@@ -1,0 +1,37 @@
+{
+    "name": "alex/sliders",
+    "description": "Gutenberg slider",
+    "type": "wordpress-plugin",
+    "minimum-stability": "dev",
+	"prefer-stable": true,
+    "authors": [
+        {
+            "name": "Alex Woollam",
+            "email": "alex.woollam@proagrica.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sliders\\": "App/",
+            "Tests\\": "Tests/"
+        }
+    },
+    "require-dev":{
+        "filp/whoops": "^2.9",
+        "inpsyde/php-coding-standards": "^1.0.0-RC.1",
+        "phpunit/phpunit": "^5 || ^7.1",
+        "brain/monkey": "^2.4",
+        "vimeo/psalm": "^4.4",
+        "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
+        "johnpbloch/wordpress-core": "5.6.0",
+        "larapack/dd": "1.*"
+    },
+    "require": {
+    },
+    "extra": {
+        "wordpress-install-dir": "vendor/wordpress"
+    },
+    "scripts": {
+        "phpunit": "./vendor/bin/phpunit"
+    }
+}
