@@ -8,6 +8,13 @@ use Sliders\Controller\Register;
 class Start{
 
     public function boot(){
-        ( new Register )->block();
+        $settings = new Config\Slider;
+        $settings->set(
+            'Sliders',
+            'embed',
+            'dashicons-table-row-before',
+            'alex-sliders'
+        );
+        ( new Register )->block( $settings );
     }
 }

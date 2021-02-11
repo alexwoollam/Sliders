@@ -6,9 +6,9 @@ use Sliders\Block\SlidersBlock;
 
 class Register
 {
-    public function block(){
+    public function block( object $settings ){
 
-        $block = new SlidersBlock;
+        $block = new SlidersBlock( $settings );
         register_block_type($block->name(), $block->args());
         
         $style = new AssetProvider($block->name(),'css');

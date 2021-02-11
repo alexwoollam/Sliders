@@ -27,6 +27,7 @@
         "larapack/dd": "1.*"
     },
     "require": {
+        "pimple/pimple": "^3.0"
     },
     "extra": {
         "wordpress-install-dir": "vendor/wordpress"

@@ -5,14 +5,25 @@ namespace Sliders\Block;
 class SlidersBlock implements BlockInterface
 {
 
-    public const NAME     = 'Sliders';
-    public const CATEGORY = 'embed';
-    public const ICON     = 'dashicons-table-row-before';
-    public const PACKAGE  = 'alex-sliders';
+
+    public string $name     = 'Sliders';
+    public string $category = 'embed';
+    public string $icon     = 'dashicons-table-row-before';
+    public string $package  = 'alex-sliders';
  
+
+    public function __construct( object $settings )
+    {
+        $config = $settings->get();
+        $this->name = $config['name'];
+        $this->category = $config['category'];
+        $this->icon = $config['icon'];
+        $this->package = $config['package'];        
+    }
+
     public function name(): string
     {
-        return self::NAME;
+        return $this->name;
     }
 
     public function args(): array
@@ -22,17 +33,17 @@ class SlidersBlock implements BlockInterface
 
     public function title(): string
     {
-        return __(self::NAME, self::PACKAGE);
+        return __($this->name, $this->package);
     }
 
     public function category(): string
     {
-        return self::CATEGORY;
+        return $this->category;
     }
 
     public function icon(): string
     {
-        return self::ICON;
+        return $this->icon;
     }
 
     public function packaged(): array
