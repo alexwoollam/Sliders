@@ -5,6 +5,8 @@ namespace Sliders\Block;
 interface BlockInterface
 {
     public function name(): string;
+    
+    public function namespace(): string;
 
     public function args(): array;
 
@@ -15,4 +17,7 @@ interface BlockInterface
     public function icon(): string;
 
     public function packaged(): array;
+    
+    public function attributes(): string;
+
 }

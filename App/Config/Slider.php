@@ -15,13 +15,15 @@ class Slider implements ConfigInterface
         $this->settings = new Container();
     }
 
-    public function set(string $name, string $category, string $icon, string $package): void
+    public function set(string $name, string $title, string $category, string $icon, string $package, string $attributes): void
     {   
         $this->settings['block'] = [
-            'name'     => $name,
-            'category' => $category,
-            'icon'     => $icon,
-            'package'  => $package,
+            'name'       => $name,
+            'title'      => $title,
+            'category'   => $category,
+            'icon'       => $icon,
+            'package'    => $package,
+            'attributes' => $attributes
         ];        
     }
 

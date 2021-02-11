@@ -6,22 +6,29 @@ class SlidersBlock implements BlockInterface
 {
 
 
-    public string $name     = 'Sliders';
-    public string $category = 'embed';
-    public string $icon     = 'dashicons-table-row-before';
-    public string $package  = 'alex-sliders';
- 
+    public string $name;
+    public string $category;
+    public string $icon;
+    public string $package;
+    public string $attributes; 
 
     public function __construct( object $settings )
     {
         $config = $settings->get();
         $this->name = $config['name'];
+        $this->title = $config['title'];
         $this->category = $config['category'];
         $this->icon = $config['icon'];
-        $this->package = $config['package'];        
+        $this->package = $config['package'];
+        $this->attributes = $config['attributes'];        
     }
 
     public function name(): string
+    {
+        return $this->name;
+    }
+
+    public function namespace(): string
     {
         return $this->name;
     }
@@ -33,7 +40,7 @@ class SlidersBlock implements BlockInterface
 
     public function title(): string
     {
-        return __($this->name, $this->package);
+        return __($this->title);
     }
 
     public function category(): string
@@ -54,5 +61,10 @@ class SlidersBlock implements BlockInterface
             'icon'     => $this->icon(),
             'name'     => $this->name(),
         ];
+    }
+
+    public function attributes(): string
+    {
+        return $this->attributes;
     }
 }

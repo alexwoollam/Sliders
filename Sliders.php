@@ -9,9 +9,11 @@ try {
 }
 
 try {
-    $whoops = new \Whoops\Run();
-    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
-    $whoops->register();
+    if( class_exists('\Whoops\Run')){
+        $whoops = new \Whoops\Run();
+        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+        $whoops->register();
+    }
 } catch (Exception $error) {
     echo 'Whoops didnt load.';
 }

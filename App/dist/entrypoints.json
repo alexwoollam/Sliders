@@ -1,0 +1,12 @@
+{
+  "entrypoints": {
+    "asset-Sliders": {
+      "css": [
+        "/asset-Sliders.css"
+      ],
+      "js": [
+        "/asset-Sliders.js"
+      ]
+    }
+  }
+}

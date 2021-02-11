@@ -58,9 +58,6 @@ class Category{
      */
     public function Add(array $categories, object $post, string $slug, string $hrTitle, string $title, string $icon): array
     {
-        
-        dd(clashCheck($categories,$slug,$hrTitle));
-
         return array_merge(
             $categories,
             [

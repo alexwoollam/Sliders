@@ -10,10 +10,12 @@ class Start{
     public function boot(){
         $settings = new Config\Slider;
         $settings->set(
-            'Sliders',
-            'embed',
-            'dashicons-table-row-before',
-            'alex-sliders'
+            'sliders',//name
+            'Sliders',//title
+            'embed',//Category
+            'table-row-before',//icon
+            'alex-sliders',//package
+            'nothing',//attributes
         );
         ( new Register )->block( $settings );
     }
