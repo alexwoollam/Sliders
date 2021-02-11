@@ -1,4 +1,4 @@
-export const Frontend = ({attributes}) => {
+export default function save({attributes}) {
     return (
         // @ts-ignore
         <div>
