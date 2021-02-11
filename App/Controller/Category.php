@@ -1,15 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sliders\Controller;
 
-class Category{
+class Category
+{
 
     public array $currentGutenbergCategories;
 
-    public function __construct(){
+    public function __construct()
+    {
 
         add_filter(
-            'block_categories', [$this,'Add'], 10, 6
+            'block_categories',
+            [$this, 'add'],
+            10,
+            6
         );
     }
 
@@ -23,7 +30,7 @@ class Category{
      */
     public function defineExisting(array $categories): array
     {
-        foreach($categories as $category){
+        foreach ($categories as $category) {
             $this->currentGutenbergCategories[$category['slug']] = $category['title'];
         }
         return $this->currentGutenbergCategories;
@@ -31,13 +38,13 @@ class Category{
 
     public function clashCheck(array $categories, string $slug, string $hrTitle): bool
     {
-        foreach($categories as $category){
-            if(isset($category[$slug])){
+        foreach ($categories as $category) {
+            if (isset($category[$slug])) {
                 return true;
             }
         }
-        foreach($categories as $category ){
-            if($category === $hrTitle){
+        foreach ($categories as $category) {
+            if ($category === $hrTitle) {
                 return true;
             }
         }
@@ -56,20 +63,17 @@ class Category{
      * @param string $icon      | Icon name.
      * @return array
      */
-    public function Add(array $categories, object $post, string $slug, string $hrTitle, string $title, string $icon): array
+    public function add(array $categories, object $post, string $slug, string $hrTitle, string $title, string $icon): array
     {
         return array_merge(
             $categories,
             [
                 [
-                    'slug'  => $slug,
-                    'title' => __($hrTitle, $title),
-                    'icon'  => 'welcome-widgets-menus',
-                ]
-            ]            
+                    'slug' => $slug,
+                    'title' => $hrTitle,
+                    'icon' => 'welcome-widgets-menus',
+                ],
+            ]
         );
     }
-    
-
-
 }

@@ -14,24 +14,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-dev',
+    'version' => 'dev-dev',
     'aliases' => 
     array (
     ),
-    'reference' => '26b3e09d8950d0accdbf21d9cc69a769c06cb96b',
+    'reference' => 'be7ee09a1897e1f2ada82aaecc6d98849b123375',
     'name' => 'alex/sliders',
   ),
   'versions' => 
   array (
     'alex/sliders' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-dev',
+      'version' => 'dev-dev',
       'aliases' => 
       array (
       ),
-      'reference' => '26b3e09d8950d0accdbf21d9cc69a769c06cb96b',
+      'reference' => 'be7ee09a1897e1f2ada82aaecc6d98849b123375',
     ),
     'amphp/amp' => 
     array (

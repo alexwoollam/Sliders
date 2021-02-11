@@ -1,22 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sliders;
 
 use Sliders\Controller\Register;
 
+class Start
+{
 
-class Start{
+    public function boot()
+    {
 
-    public function boot(){
-        $settings = new Config\Slider;
+        $settings = new Config\Slider();
         $settings->set(
-            'sliders',//name
-            'Sliders',//title
-            'embed',//Category
-            'table-row-before',//icon
-            'alex-sliders',//package
-            [ 
-                'slider-id'  => [
+            'sliders', //name
+            'Sliders', //title
+            'embed', //Category
+            'table-row-before', //icon
+            'alex-sliders', //package
+            [
+                'slider-id' => [
                     'type' => 'string',
                 ],
                 'show-title' => [
@@ -33,13 +37,13 @@ class Start{
                 ],
                 'width' => [
                     'type' => 'number',
-                    'min'  => 1,
-                    'max'  => 100,
+                    'min' => 1,
+                    'max' => 100,
                     'step' => 5,
                     'default' => 100,
                 ],
-            ],//attributes
+            ], //attributes
         );
-        ( new Register )->block( $settings );
+        ( new Register() )->block($settings);
     }
 }

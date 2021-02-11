@@ -35,6 +35,8 @@
     "scripts": {
         "phpunit": "./vendor/bin/phpunit",
         "dev": "rm -rf ./vendor/ && rm -rf ./composer.lock && composer install",
-        "prod": "rm -rf ./vendor/ && rm -rf ./composer.lock && composer install --no-dev"
+        "prod": "rm -rf ./vendor/ && rm -rf ./composer.lock && composer install --no-dev",
+        "phpcs": "./vendor/bin/phpcs",
+        "phpcbf": "./vendor/bin/phpcbf"
     }
 }

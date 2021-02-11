@@ -1,18 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sliders\Block;
 
 class SlidersBlock implements BlockInterface
 {
 
-
     public string $name;
     public string $category;
     public string $icon;
     public string $package;
-    public array $attributes; 
+    public array $attributes;
 
-    public function __construct( object $settings )
+    public function __construct(object $settings)
     {
         $config = $settings->get();
         $this->name = $config['name'];
@@ -20,7 +21,7 @@ class SlidersBlock implements BlockInterface
         $this->category = $config['category'];
         $this->icon = $config['icon'];
         $this->package = $config['package'];
-        $this->attributes = $config['attributes'];        
+        $this->attributes = $config['attributes'];
     }
 
     public function name(): string
@@ -40,7 +41,7 @@ class SlidersBlock implements BlockInterface
 
     public function title(): string
     {
-        return __($this->title);
+        return $this->title;
     }
 
     public function category(): string
@@ -56,10 +57,10 @@ class SlidersBlock implements BlockInterface
     public function packaged(): array
     {
         return[
-            'title'    => $this->title(),
+            'title' => $this->title(),
             'category' => $this->category(),
-            'icon'     => $this->icon(),
-            'name'     => $this->name(),
+            'icon' => $this->icon(),
+            'name' => $this->name(),
         ];
     }
 

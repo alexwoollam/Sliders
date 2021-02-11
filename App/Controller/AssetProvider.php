@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sliders\Controller;
 
 class AssetProvider implements AssetInterface
@@ -8,12 +10,12 @@ class AssetProvider implements AssetInterface
     public string $url;
     public string $type;
 
-    public function __construct( string $name, string $type )
+    public function __construct(string $name, string $type)
     {
-        $this->handle = 'asset-'.$name;
-        $this->type   = $type;
-        $this->url    = plugins_url('dist/'. $this->handle .'.'.$this->type.'', __FILE__);
-        $this->url    = str_replace('/Controller','', $this->url);
+        $this->handle = 'asset-' . $name;
+        $this->type = $type;
+        $this->url = plugins_url('dist/' . $this->handle . '.' . $this->type . '', __FILE__);
+        $this->url = str_replace('/Controller', '', $this->url);
     }
 
     public function handle(): string
@@ -29,16 +31,5 @@ class AssetProvider implements AssetInterface
     public function filePath(): string
     {
         return $this->file;
-    }
-
-    public function registerStyle(): mixed
-    {
-        dd(
-            $this->handle()
-        );
-    }
-    
-    public function registerScript(): mixed
-    {
     }
 }
