@@ -36,6 +36,7 @@
         "phpunit": "./vendor/bin/phpunit",
         "dev": "rm -rf ./vendor/ && rm -rf ./composer.lock && composer install",
         "prod": "rm -rf ./vendor/ && rm -rf ./composer.lock && composer install --no-dev",
+        "qa": "rm -rf ./vendor/ && rm -rf ./composer.lock && composer install --prefer-dist --no-progress --no-suggest",
         "phpcs": "./vendor/bin/phpcs",
         "phpcbf": "./vendor/bin/phpcbf"
     }
