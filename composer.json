@@ -33,6 +33,8 @@
         "wordpress-install-dir": "vendor/wordpress"
     },
     "scripts": {
-        "phpunit": "./vendor/bin/phpunit"
+        "phpunit": "./vendor/bin/phpunit",
+        "dev": "rm -rf ./vendor/ && rm -rf ./composer.lock && composer install",
+        "prod": "rm -rf ./vendor/ && rm -rf ./composer.lock && composer install --no-dev"
     }
 }
