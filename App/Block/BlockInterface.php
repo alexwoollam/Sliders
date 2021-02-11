@@ -18,6 +18,6 @@ interface BlockInterface
 
     public function packaged(): array;
     
-    public function attributes(): string;
+    public function attributes(): array;
 
 }

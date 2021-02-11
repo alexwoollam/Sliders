@@ -10,7 +10,7 @@ class SlidersBlock implements BlockInterface
     public string $category;
     public string $icon;
     public string $package;
-    public string $attributes; 
+    public array $attributes; 
 
     public function __construct( object $settings )
     {
@@ -63,7 +63,7 @@ class SlidersBlock implements BlockInterface
         ];
     }
 
-    public function attributes(): string
+    public function attributes(): array
     {
         return $this->attributes;
     }
