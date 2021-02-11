@@ -7,11 +7,11 @@ namespace Sliders\Block;
 class SlidersBlock implements BlockInterface
 {
 
-    public string $name;
-    public string $category;
-    public string $icon;
-    public string $package;
-    public array $attributes;
+    public $name;
+    public $category;
+    public $icon;
+    public $package;
+    public $attributes;
 
     public function __construct(object $settings)
     {

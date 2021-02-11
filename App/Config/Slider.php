@@ -9,7 +9,7 @@ use Pimple\Container;
 class Slider implements ConfigInterface
 {
 
-    public Container $settings;
+    public $settings;
 
     public function __construct()
     {

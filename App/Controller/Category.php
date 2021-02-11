@@ -7,7 +7,7 @@ namespace Sliders\Controller;
 class Category
 {
 
-    public array $currentGutenbergCategories;
+    public $currentGutenbergCategories;
 
     public function __construct()
     {

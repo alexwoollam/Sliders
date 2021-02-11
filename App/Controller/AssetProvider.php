@@ -6,9 +6,9 @@ namespace Sliders\Controller;
 
 class AssetProvider implements AssetInterface
 {
-    public string $handle;
-    public string $url;
-    public string $type;
+    public $handle;
+    public $url;
+    public $type;
 
     public function __construct(string $name, string $type)
     {
